@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="upsertTarget_P" targetNamespace="http://localhost:5555/Test.Nov05.wsdl:upsertTarget_P" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost:5555/Test.Nov05.wsdl:upsertTarget_P" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost:5555/Test.Nov05.wsdl:upsertTarget_P" xmlns:tns="http://localhost:5555/Test.Nov05.wsdl:upsertTarget_P" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="upsertTarget_svc" type="tns:upsertTarget_svc"/>
+          <xsd:complexType name="upsertTarget_svc">
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="results" nillable="true" type="tns:results"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="results">
+            <xsd:sequence>
+              <xsd:element name="COUNTRY" nillable="true" type="xsd:string"/>
+              <xsd:element name="CAPITAL" nillable="true" type="xsd:string"/>
+              <xsd:element name="LOCATION" nillable="true" type="xsd:string"/>
+              <xsd:element name="ETC" nillable="true" type="xsd:string"/>
+              <xsd:element name="IFFLAG" nillable="true" type="xsd:string"/>
+              <xsd:element name="IFTIME" nillable="true" type="xsd:anyType"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="upsertTarget_P_PortType_upsertTarget_svc">
+    <wsdl:part name="parameters" element="tns:upsertTarget_svc">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="upsertTarget_P_PortType">
+    <wsdl:operation name="upsertTarget_svc">
+      <wsdl:input message="tns:upsertTarget_P_PortType_upsertTarget_svc">
+    </wsdl:input>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Test_Nov05_wsdl_upsertTarget_P_Binder" type="tns:upsertTarget_P_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="upsertTarget_svc">
+      <soap:operation soapAction="Test_Nov05_wsdl_upsertTarget_P_Binder_upsertTarget_svc" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Test.Nov05.wsdl.upsertTarget_P">
+    <wsdl:port name="Test_Nov05_wsdl_upsertTarget_P_Port" binding="tns:Test_Nov05_wsdl_upsertTarget_P_Binder">
+      <soap:address location="http://DESKTOP-MCC5VDF:5555/ws/Test.Nov05.wsdl:upsertTarget_P/Test_Nov05_wsdl_upsertTarget_P_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

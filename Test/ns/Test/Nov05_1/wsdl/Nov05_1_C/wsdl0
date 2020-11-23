@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Nov05_P" targetNamespace="http://DESKTOP-MCC5VDF/Test.Nov05.wsdl:Nov05_P" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://DESKTOP-MCC5VDF/Test.Nov05.wsdl:Nov05_P" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://DESKTOP-MCC5VDF/Test.Nov05.wsdl:Nov05_P" xmlns:tns="http://DESKTOP-MCC5VDF/Test.Nov05.wsdl:Nov05_P" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+          <xsd:element name="Nov05_svc" type="tns:Nov05_svc"/>
+          <xsd:element name="Nov05_svcResponse" type="tns:Nov05_svcResponse"/>
+          <xsd:complexType name="Nov05_svc">
+            <xsd:sequence>
+              <xsd:element name="Input" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="Nov05_svcResponse">
+            <xsd:sequence>
+              <xsd:element name="Output" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Nov05_P_PortType_Nov05_svc">
+    <wsdl:part name="parameters" element="tns:Nov05_svc">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Nov05_P_PortType_Nov05_svcResponse">
+    <wsdl:part name="parameters" element="tns:Nov05_svcResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Nov05_P_PortType">
+    <wsdl:operation name="Nov05_svc">
+      <wsdl:input message="tns:Nov05_P_PortType_Nov05_svc">
+    </wsdl:input>
+      <wsdl:output message="tns:Nov05_P_PortType_Nov05_svcResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Test_Nov05_wsdl_Nov05_P_Binder" type="tns:Nov05_P_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Nov05_svc">
+      <soap:operation soapAction="Test_Nov05_wsdl_Nov05_P_Binder_Nov05_svc" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Test.Nov05.wsdl.Nov05_P">
+    <wsdl:port name="Test_Nov05_wsdl_Nov05_P_Port" binding="tns:Test_Nov05_wsdl_Nov05_P_Binder">
+      <soap:address location="http://DESKTOP-MCC5VDF:5555/ws/Test.Nov05.wsdl:Nov05_P/Test_Nov05_wsdl_Nov05_P_Port"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">Test.Nov06.wsdl.selectTeamTarget_C_.docTypes:docTypeRef_tns_upsertTeamTarget_svc</value>
+    <value name="node_pkg">Test</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="schemaDomain">99937fe5185d473494d39b7cdf79f9a4</value>
+    <value name="docTypeDomain">d5802804a7254694a630ae8aa3c2d36e</value>
+    <value name="originURI">http://localhost:5555/ws/Test.Nov06.wsdl:upsertTeamTarget_P?WSDL</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">selectTarget_svcOutput</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">0</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="rec_closed">true</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">Test.Nov06.wsdl.selectTeamTarget_C_.docTypes:docTypeRef_tns_selectTarget_svcOutput</value>
+      </record>
+    </array>
+    <record name="schemaType" javaclass="com.wm.util.Values">
+      <value name="xmlns">http://localhost:5555/Test.Nov06.wsdl:upsertTeamTarget_P</value>
+      <value name="ncName">upsertTeamTarget_svc</value>
+    </record>
+    <value name="schemaRegistered">true</value>
+    <value name="modifiable">false</value>
+  </record>
+</Values>
